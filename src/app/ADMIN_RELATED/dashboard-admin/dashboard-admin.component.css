@@ -1,0 +1,22 @@
+.spacer {
+  flex: 1 1 auto;
+}
+
+::ng-deep .mat-menu-content {
+  background-color: #353e4d !important;
+}
+
+.icon {
+  font-size: 35px;
+  vertical-align: middle;
+  margin-bottom: 10px;
+}
+
+.a {
+  margin-left: 10px;
+  vertical-align: middle;
+}
+
+.toolbar-color {
+  background-color: #282d39;
+}

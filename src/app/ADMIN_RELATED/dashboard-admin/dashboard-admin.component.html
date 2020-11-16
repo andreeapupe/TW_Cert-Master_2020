@@ -1,0 +1,14 @@
+<mat-toolbar class="toolbar-color">
+  <mat-icon class="icon">blur_on</mat-icon><a class="a">Cert-Master - admin</a>
+  <span class="spacer"></span>
+
+  <button mat-button [matMenuTriggerFor]="menu">
+    <mat-icon>menu</mat-icon>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item [routerLink]="['/dashboard-user']">User</button>
+      <button mat-menu-item [routerLink]="['/welcome-screen']">
+        Disconnect
+      </button>
+    </mat-menu>
+  </button>
+</mat-toolbar>

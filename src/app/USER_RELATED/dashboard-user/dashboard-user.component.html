@@ -1,0 +1,27 @@
+<mat-toolbar class="toolbar-color">
+  <mat-icon class="icon">blur_on</mat-icon><a class="a">Cert-Master - user</a>
+  <span class="spacer"></span>
+
+  <button mat-button [matMenuTriggerFor]="menu">
+    <mat-icon>menu</mat-icon>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item [routerLink]="['/dashboard-admin']">Admin</button>
+      <button mat-menu-item [routerLink]="['/welcome-screen']">
+        Disconnect
+      </button>
+    </mat-menu>
+  </button>
+</mat-toolbar>
+
+<mat-card class="search-mat-card">
+  <div>
+    <input
+      type="text"
+      placeholder="    Look for a request"
+      [(ngModel)]="term"
+      class="search-box"
+      #searchInput
+    />
+    <span matPrefix><mat-icon class="search-icon">search</mat-icon></span>
+  </div>
+</mat-card>

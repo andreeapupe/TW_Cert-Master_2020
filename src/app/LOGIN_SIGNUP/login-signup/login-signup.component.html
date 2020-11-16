@@ -37,11 +37,25 @@
               <mat-icon matSuffix>lock</mat-icon>
             </mat-form-field>
             <mat-checkbox color="primary">Remember Me!</mat-checkbox>
-            <button mat-raised-button color="accent" class="login-button">
-              User
-            </button>
-            <button mat-raised-button class="login-button">Admin</button>
           </form>
+
+          <button
+            mat-raised-button
+            [routerLink]="['/dashboard-user']"
+            routerLinkActive="router-link-active"
+            class="login-button"
+          >
+            User
+          </button>
+
+          <button
+            mat-raised-button
+            [routerLink]="['/dashboard-admin']"
+            routerLinkActive="router-link-active"
+            class="login-button"
+          >
+            Admin
+          </button>
         </mat-card-content>
       </mat-tab>
 

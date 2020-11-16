@@ -1,0 +1,59 @@
+.spacer {
+  flex: 1 1 auto;
+}
+
+mat-card {
+  width: 20px;
+  height: 20px;
+}
+
+::ng-deep .mat-menu-content {
+  background-color: #353e4d !important;
+}
+
+.icon {
+  font-size: 35px;
+  vertical-align: middle;
+  margin-bottom: 10px;
+}
+
+.a {
+  margin-left: 10px;
+  vertical-align: middle;
+}
+
+.toolbar-color {
+  background-color: #282d39;
+}
+
+.search-mat-card {
+  height: 26px;
+  width: 1480px;
+  display: flex;
+  align-items: center;
+  background-color: #353e4d;
+  right: 20px;
+  bottom: 15px;
+  top: 0px;
+}
+
+.search-box {
+  width: 300%;
+  height: 40px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  background-color: #c4c4c4;
+  margin-left: 20px;
+}
+
+.search-icon {
+  color: black;
+  position: fixed;
+  top: 85px;
+  left: 24px;
+  font-size: 15px;
+}
