@@ -2,9 +2,8 @@
   flex: 1 1 auto;
 }
 
-mat-card {
-  width: 20px;
-  height: 20px;
+.toolbar-color {
+  background-color: #282d39;
 }
 
 ::ng-deep .mat-menu-content {
@@ -56,4 +55,103 @@ mat-card {
   top: 85px;
   left: 24px;
   font-size: 15px;
+}
+
+.all-cert-button {
+  background-color: #c4c4c4;
+  color: #353e4d;
+}
+
+.mat-card-content {
+  background-color: #282d39;
+}
+
+.request-cards {
+  width: 700px;
+  height: 320px;
+  background-color: #353e4d;
+  color: white;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.certification-title {
+  position: absolute;
+  left: 100px;
+  top: 50px;
+  left: 38px;
+  font-size: x-large;
+  height: 20px;
+}
+
+.certification-category {
+  position: absolute;
+  left: 100px;
+  top: 115px;
+  left: 38px;
+  font-size: large;
+  height: 20px;
+}
+
+.status {
+  color: black;
+  width: 200px;
+  height: 10px;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 10px;
+  font-size: 15.2px;
+  background-color: #fdeb9f;
+}
+
+.div-matcard-status {
+  position: absolute;
+  top: 50px;
+}
+
+.align-status {
+  position: absolute;
+  font-size: large;
+  margin-top: 45px;
+  left: 38px;
+  top: 100px;
+}
+
+.vertical-line {
+  border-left: 1px solid #c4c4c4;
+  position: absolute;
+  margin-right: 14px;
+  height: 400px;
+  bottom: 20px;
+  left: 0px;
+}
+
+.quarter-position {
+  position: absolute;
+  top: 40px;
+  left: 15px;
+}
+
+.cost-position {
+  position: absolute;
+  top: 60px;
+  left: 15px;
+}
+
+.business-justification-position {
+  position: absolute;
+  top: 50px;
+  left: 15px;
+  bottom: 40px;
+  top: 100px;
+}
+
+.delete-button {
+  color: red;
+}
+
+.main-back {
+  background-color: #282d39;
 }

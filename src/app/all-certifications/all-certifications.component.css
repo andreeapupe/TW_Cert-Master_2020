@@ -1,0 +1,55 @@
+.spacer {
+  flex: 1 1 auto;
+}
+
+.toolbar-color {
+  background-color: #282d39;
+}
+
+::ng-deep .mat-menu-content {
+  background-color: #353e4d !important;
+}
+
+.cards {
+  background-color: #353e4d;
+  height: 300px;
+  width: 600px;
+  margin-right: 5px;
+}
+
+.back {
+  background-color: #282d39;
+}
+
+h2 {
+  text-align: center;
+}
+
+.margin {
+  margin-top: 20px;
+}
+
+.header-image {
+  background-image: url('https://www.colourbox.com/preview/24614905-graduation-cap-icon.jpg');
+  background-size: cover;
+}
+
+mat-card-header {
+  height: 60px;
+}
+
+.line {
+  margin: 0px;
+  text-align: left;
+}
+
+.all-certifications {
+  width: 1427px;
+  right: 50px;
+  background-color: #353e4d;
+  bottom: 20px;
+}
+
+::ng-deep .mat-menu-content {
+  background-color: #353e4d !important;
+}

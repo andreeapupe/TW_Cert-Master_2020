@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core'
 
 @Component({
   selector: 'app-dashboard-user',
@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dashboard-user.component.css'],
 })
 export class DashboardUserComponent implements OnInit {
-  term: string;
+  term: string
 
   constructor() {}
 

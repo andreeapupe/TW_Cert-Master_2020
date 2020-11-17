@@ -1,0 +1,13 @@
+.submit-button {
+  display: table;
+  margin: 0 auto;
+}
+
+::ng-deep.mat-select-panel {
+  background-color: #353e4d !important;
+}
+
+.submit {
+  background-color: #c4c4c4;
+  color: #282d39;
+}

@@ -1,9 +1,10 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { NgModule } from '@angular/core'
+import { Routes, RouterModule } from '@angular/router'
 
-import { LoginSignupComponent } from './LOGIN_SIGNUP/login-signup/login-signup.component';
-import { DashboardUserComponent } from './USER_RELATED/dashboard-user/dashboard-user.component';
-import { DashboardAdminComponent } from './ADMIN_RELATED/dashboard-admin/dashboard-admin.component';
+import { LoginSignupComponent } from './LOGIN_SIGNUP/login-signup/login-signup.component'
+import { DashboardUserComponent } from './USER_RELATED/dashboard-user/dashboard-user.component'
+import { DashboardAdminComponent } from './ADMIN_RELATED/dashboard-admin/dashboard-admin.component'
+import { AllCertificationsComponent } from '../app/all-certifications/all-certifications.component'
 
 const routes: Routes = [
   {
@@ -19,7 +20,8 @@ const routes: Routes = [
   { path: 'dashboard-user', component: DashboardUserComponent },
   { path: 'welcome-screen', component: LoginSignupComponent },
   { path: 'dashboard-admin', component: DashboardAdminComponent },
-];
+  { path: 'all-certifications', component: AllCertificationsComponent },
+]
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
@@ -27,4 +29,8 @@ const routes: Routes = [
 })
 export class AppRoutingModule {}
 
-export const RoutingComponents = [LoginSignupComponent, DashboardUserComponent];
+export const RoutingComponents = [
+  LoginSignupComponent,
+  DashboardUserComponent,
+  AllCertificationsComponent,
+]

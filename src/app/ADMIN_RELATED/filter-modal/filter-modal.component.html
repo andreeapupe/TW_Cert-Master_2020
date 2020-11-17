@@ -1,0 +1,35 @@
+<div class="container">
+  <h2>Filter your search</h2>
+  <div class="fill"></div>
+  <div fxFlex></div>
+  <button mat-icon-button mat-dialog-close>x</button>
+</div>
+<mat-divider></mat-divider>
+<br />
+<mat-form-field appearance="outline">
+  <mat-label>Filter by quarter</mat-label>
+  <mat-select>
+    <mat-option>-- None --</mat-option>
+    <mat-option value="1">Q1</mat-option>
+    <mat-option value="2"> Q2</mat-option>
+    <mat-option value="3">Q3</mat-option>
+    <mat-option value="4">Q4</mat-option>
+  </mat-select>
+</mat-form-field>
+
+<br />
+<mat-form-field appearance="outline">
+  <mat-label>Filter by status</mat-label>
+  <mat-select>
+    <mat-option>-- None --</mat-option>
+    <mat-option value="Approved">Approved</mat-option>
+    <mat-option value="Rejected">Rejected</mat-option>
+    <mat-option value="Pending">Pending</mat-option>
+  </mat-select>
+</mat-form-field>
+
+<br />
+
+<div class="submit-button">
+  <button mat-raised-button class="submit">Confirm filters</button>
+</div>
