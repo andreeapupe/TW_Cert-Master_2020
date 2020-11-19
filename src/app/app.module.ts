@@ -22,6 +22,7 @@ import { MatDialogModule } from '@angular/material/dialog'
 import { MatSelectModule } from '@angular/material/select'
 import { MatDividerModule } from '@angular/material/divider'
 import { MatGridListModule } from '@angular/material/grid-list'
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
 import 'hammerjs'
 
 import { MatToolbarModule } from '@angular/material/toolbar'
@@ -29,6 +30,7 @@ import { DashboardUserComponent } from './USER_RELATED/dashboard-user/dashboard-
 import { DashboardAdminComponent } from './ADMIN_RELATED/dashboard-admin/dashboard-admin.component'
 import { FilterModalComponent } from './ADMIN_RELATED/filter-modal/filter-modal.component'
 import { AllCertificationsComponent } from './all-certifications/all-certifications.component'
+import { AddRequestComponent } from './USER_RELATED/add-request/add-request.component'
 
 @NgModule({
   declarations: [
@@ -39,6 +41,7 @@ import { AllCertificationsComponent } from './all-certifications/all-certificati
     DashboardAdminComponent,
     FilterModalComponent,
     AllCertificationsComponent,
+    AddRequestComponent,
   ],
   imports: [
     BrowserModule,
@@ -61,6 +64,7 @@ import { AllCertificationsComponent } from './all-certifications/all-certificati
     MatSelectModule,
     MatDividerModule,
     MatGridListModule,
+    FontAwesomeModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

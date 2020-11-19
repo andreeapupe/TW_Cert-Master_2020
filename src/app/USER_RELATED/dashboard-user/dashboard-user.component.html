@@ -31,8 +31,8 @@
   <mat-card class="mat-card-content">
     <br />
     <div>
-      <button mat-mini-fab class="button">
-        <i class="fas fa-plus"></i>
+      <button mat-mini-fab class="button" (click)="openDialogNewRequest()">
+        <fa-icon [icon]="faPlus"></fa-icon>
       </button>
 
       <div fxFlex></div>
@@ -82,7 +82,60 @@
 
             <div fxFlex></div>
             <button mat-icon-button [matMenuTriggerFor]="aboveMenu">
-              <i class="fas fa-edit edit-request-icon"></i>
+              <fa-icon [icon]="faEdit" class="edit-request-icon"></fa-icon>
+            </button>
+            <mat-menu
+              #aboveMenu="matMenu"
+              yPosition="above"
+              backdropClass="delete-button"
+            >
+              <div>
+                <button mat-menu-item color="accent">Edit justification</button>
+              </div>
+              <button mat-menu-item class="delete-button">
+                Delete request
+              </button>
+            </mat-menu>
+          </mat-grid-list>
+        </mat-card>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <mat-card class="request-cards">
+          <mat-grid-list cols="2">
+            <mat-grid-tile>
+              <mat-card-content>
+                <div class="certification-title">
+                  <p>ISTQB</p>
+                </div>
+
+                <br />
+
+                <div class="certification-category">
+                  <p>Software</p>
+                </div>
+                <div class="align-status">
+                  <div class="div-matcard-status">
+                    <mat-card class="status"> Pending </mat-card>
+                  </div>
+                </div>
+              </mat-card-content>
+            </mat-grid-tile>
+
+            <mat-grid-tile>
+              <div class="vertical-line"></div>
+              <mat-card-content>
+                <p class="quarter-position">Quarter: Q3</p>
+                <p class="cost-position">Cost: 874932$</p>
+                <p class="business-justification-position">
+                  Business Justification: djksfhsdsdkfbsdlkfndhifs
+                </p>
+              </mat-card-content>
+            </mat-grid-tile>
+
+            <div fxFlex></div>
+            <button mat-icon-button [matMenuTriggerFor]="aboveMenu">
+              <fa-icon [icon]="faEdit" class="edit-request-icon"></fa-icon>
             </button>
             <mat-menu
               #aboveMenu="matMenu"

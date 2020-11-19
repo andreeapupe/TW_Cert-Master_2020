@@ -1,5 +1,6 @@
 <mat-toolbar class="toolbar-color">
-  <mat-icon class="icon" [routerLink]="['/welcome-screen']">blur_on</mat-icon
+  <mat-icon class="toolbar-icon" [routerLink]="['/welcome-screen']"
+    >blur_on</mat-icon
   ><a class="a">Cert-Master - admin</a>
   <span class="spacer"></span>
 
@@ -34,7 +35,10 @@
 
     <button mat-mini-fab class="excel-button">
       <a>
-        <i class="far fa-file-excel" style="font-size: 25px; color: white"></i>
+        <fa-icon
+          [icon]="faFileExcel"
+          style="font-size: 25px; color: white"
+        ></fa-icon>
       </a>
     </button>
   </div>

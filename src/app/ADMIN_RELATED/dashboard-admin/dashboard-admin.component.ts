@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core'
 import { MatDialog } from '@angular/material/dialog'
 import { FilterModalComponent } from '../filter-modal/filter-modal.component'
-import { MatDialogModule } from '@angular/material/dialog'
+import { faFileExcel } from '@fortawesome/free-solid-svg-icons'
 
 @Component({
   selector: 'app-dashboard-admin',
@@ -9,6 +9,7 @@ import { MatDialogModule } from '@angular/material/dialog'
   styleUrls: ['./dashboard-admin.component.css'],
 })
 export class DashboardAdminComponent implements OnInit {
+  faFileExcel = faFileExcel
   public filterStatus: string = ''
   public filterQuarter: string = ''
 

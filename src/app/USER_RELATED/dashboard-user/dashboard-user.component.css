@@ -1,3 +1,7 @@
+::ng-deep.mat-dialog-container {
+  background-color: #282d39 !important;
+}
+
 .spacer {
   flex: 1 1 auto;
 }
@@ -154,4 +158,10 @@
 
 .main-back {
   background-color: #282d39;
+}
+
+.edit-request-icon {
+  font-size: 25px;
+  margin-bottom: 90px;
+  color: #c4c4c4;
 }
