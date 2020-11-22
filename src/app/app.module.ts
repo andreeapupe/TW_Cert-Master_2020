@@ -23,6 +23,7 @@ import { MatSelectModule } from '@angular/material/select'
 import { MatDividerModule } from '@angular/material/divider'
 import { MatGridListModule } from '@angular/material/grid-list'
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
+import { MatSnackBarModule } from '@angular/material/snack-bar'
 import 'hammerjs'
 
 import { MatToolbarModule } from '@angular/material/toolbar'
@@ -30,7 +31,8 @@ import { DashboardUserComponent } from './USER_RELATED/dashboard-user/dashboard-
 import { DashboardAdminComponent } from './ADMIN_RELATED/dashboard-admin/dashboard-admin.component'
 import { FilterModalComponent } from './ADMIN_RELATED/filter-modal/filter-modal.component'
 import { AllCertificationsComponent } from './all-certifications/all-certifications.component'
-import { AddRequestComponent } from './USER_RELATED/add-request/add-request.component'
+import { AddRequestComponent } from './USER_RELATED/add-request/add-request.component';
+import { ChangeStatusModalComponent } from './ADMIN_RELATED/change-status-modal/change-status-modal.component'
 
 @NgModule({
   declarations: [
@@ -42,6 +44,7 @@ import { AddRequestComponent } from './USER_RELATED/add-request/add-request.comp
     FilterModalComponent,
     AllCertificationsComponent,
     AddRequestComponent,
+    ChangeStatusModalComponent,
   ],
   imports: [
     BrowserModule,
@@ -65,6 +68,7 @@ import { AddRequestComponent } from './USER_RELATED/add-request/add-request.comp
     MatDividerModule,
     MatGridListModule,
     FontAwesomeModule,
+    MatSnackBarModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -15,6 +15,19 @@
   </button>
 </mat-toolbar>
 
+<mat-card class="search-mat-card">
+  <div>
+    <input
+      type="text"
+      placeholder="    Look for a request"
+      [(ngModel)]="term"
+      class="search-box"
+      #searchInput
+    />
+    <span matPrefix><mat-icon class="search-icon">search</mat-icon></span>
+  </div>
+</mat-card>
+
 <mat-card class="background">
   <div>
     <button
@@ -33,7 +46,7 @@
     </div>
     <div fxFlex></div>
 
-    <button mat-mini-fab class="excel-button">
+    <button mat-mini-fab class="excel-button" (click)="openExcelSnackBar()">
       <a>
         <fa-icon
           [icon]="faFileExcel"
@@ -86,11 +99,21 @@
           <mat-card-content>
             <mat-grid-list cols="3">
               <a>
-                <button mat-raised-button class="approve-button">
+                <button
+                  mat-raised-button
+                  class="approve-button"
+                  (click)="openDialogAcceptReject()"
+                >
                   Approve
                 </button>
 
-                <button mat-raised-button class="reject-button">Reject</button>
+                <button
+                  mat-raised-button
+                  class="reject-button"
+                  (click)="openDialogAcceptReject()"
+                >
+                  Reject
+                </button>
               </a>
             </mat-grid-list>
           </mat-card-content>
@@ -107,7 +130,7 @@
             <mat-card-subtitle> Request no. 34894893 </mat-card-subtitle>
           </a>
           <div class="fill"></div>
-          <mat-card class="status">Pending</mat-card>
+          <mat-card class="status-acc">Accepted</mat-card>
         </div>
 
         <mat-card-content class="spacing">
@@ -141,11 +164,9 @@
           <mat-card-content>
             <mat-grid-list cols="3">
               <a>
-                <button mat-raised-button class="approve-button">
-                  Approve
+                <button mat-raised-button class="delete-button">
+                  Delete request<mat-icon>delete</mat-icon>
                 </button>
-
-                <button mat-raised-button class="reject-button">Reject</button>
               </a>
             </mat-grid-list>
           </mat-card-content>
