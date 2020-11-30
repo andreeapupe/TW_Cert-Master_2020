@@ -3,6 +3,7 @@ import { faEdit } from '@fortawesome/free-solid-svg-icons'
 import { faPlus } from '@fortawesome/free-solid-svg-icons'
 import { MatDialog } from '@angular/material/dialog'
 import { AddRequestComponent } from '../../USER_RELATED/add-request/add-request.component'
+import { DeleteModalComponent } from '../delete-modal/delete-modal.component'
 
 @Component({
   selector: 'app-dashboard-user',
@@ -22,6 +23,15 @@ export class DashboardUserComponent implements OnInit {
     const dialogRef = this.dialog.open(AddRequestComponent)
     dialogRef.afterClosed().subscribe((result) => {
       console.log(result)
+    })
+  }
+
+  deleteDialog() {
+    const dialog = this.dialog.open(DeleteModalComponent)
+    console.log('The delete dialog was closed.')
+
+    dialog.afterClosed().subscribe((result) => {
+      console.log('successful deletion')
     })
   }
 }

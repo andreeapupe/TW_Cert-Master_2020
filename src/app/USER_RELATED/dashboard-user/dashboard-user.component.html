@@ -92,7 +92,11 @@
               <div>
                 <button mat-menu-item color="accent">Edit justification</button>
               </div>
-              <button mat-menu-item class="delete-button">
+              <button
+                mat-menu-item
+                class="delete-button"
+                (click)="deleteDialog()"
+              >
                 Delete request
               </button>
             </mat-menu>

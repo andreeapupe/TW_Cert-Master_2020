@@ -32,7 +32,8 @@ import { DashboardAdminComponent } from './ADMIN_RELATED/dashboard-admin/dashboa
 import { FilterModalComponent } from './ADMIN_RELATED/filter-modal/filter-modal.component'
 import { AllCertificationsComponent } from './all-certifications/all-certifications.component'
 import { AddRequestComponent } from './USER_RELATED/add-request/add-request.component';
-import { ChangeStatusModalComponent } from './ADMIN_RELATED/change-status-modal/change-status-modal.component'
+import { ChangeStatusModalComponent } from './ADMIN_RELATED/change-status-modal/change-status-modal.component';
+import { DeleteModalComponent } from './USER_RELATED/delete-modal/delete-modal.component'
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { ChangeStatusModalComponent } from './ADMIN_RELATED/change-status-modal/
     AllCertificationsComponent,
     AddRequestComponent,
     ChangeStatusModalComponent,
+    DeleteModalComponent,
   ],
   imports: [
     BrowserModule,
