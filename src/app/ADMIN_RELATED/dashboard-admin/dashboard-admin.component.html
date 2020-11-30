@@ -164,7 +164,11 @@
           <mat-card-content>
             <mat-grid-list cols="3">
               <a>
-                <button mat-raised-button class="delete-button">
+                <button
+                  mat-raised-button
+                  class="delete-button"
+                  (click)="deleteDialog()"
+                >
                   Delete request<mat-icon>delete</mat-icon>
                 </button>
               </a>
