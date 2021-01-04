@@ -64,6 +64,8 @@
 .all-cert-button {
   background-color: #c4c4c4;
   color: #353e4d;
+  position: relative;
+  right: 23px;
 }
 
 .mat-card-content {
@@ -71,7 +73,7 @@
 }
 
 .request-cards {
-  width: 700px;
+  width: 650px;
   height: 320px;
   background-color: #353e4d;
   color: white;
@@ -164,4 +166,23 @@
   font-size: 25px;
   margin-bottom: 90px;
   color: #c4c4c4;
+}
+
+.approved {
+  background-color: #acfd9f;
+}
+
+.rejected {
+  background-color: red;
+}
+
+.pending {
+  background-color: #fdeb9f;
+}
+
+.plus-button {
+  background-color: #c4c4c4;
+  color: #353e4d;
+  position: absolute;
+  margin-left: 14px;
 }

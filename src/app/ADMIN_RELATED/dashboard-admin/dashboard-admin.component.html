@@ -47,17 +47,19 @@
     <div fxFlex></div>
 
     <button mat-mini-fab class="excel-button" (click)="openExcelSnackBar()">
-      <a>
-        <fa-icon
-          [icon]="faFileExcel"
-          style="font-size: 25px; color: white"
-        ></fa-icon>
+      <a [href]="downloadLink">
+        <a>
+          <fa-icon
+            [icon]="faFileExcel"
+            style="font-size: 25px; color: white"
+          ></fa-icon>
+        </a>
       </a>
     </button>
   </div>
 
   <mat-grid-list cols="4" rowHeight="670px">
-    <mat-grid-tile *ngFor="let request of allCertifications">
+    <mat-grid-tile *ngFor="let request of allCertifications | filter: term">
       <mat-card class="cards">
         <div class="container">
           <a>
@@ -143,8 +145,6 @@
               >
                 Delete request<mat-icon>delete</mat-icon>
               </button>
-
-              <!------------_#48394723847239842738742394872y3uhrnfdfkiujduij-->
             </mat-grid-list>
           </mat-card-content>
         </div>

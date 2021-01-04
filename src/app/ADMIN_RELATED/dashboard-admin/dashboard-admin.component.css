@@ -169,3 +169,16 @@
   background-color: green;
   color: #282d39;
 }
+
+.approved {
+  background-color: #44786a;
+}
+
+.rejected {
+  background-color: #ab3d36;
+}
+
+.pending {
+  background-color: #ffd199;
+  color: #282d39;
+}

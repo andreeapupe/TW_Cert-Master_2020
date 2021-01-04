@@ -28,22 +28,105 @@
 </mat-card>
 
 <div class="main-back">
-  <mat-card class="mat-card-content">
-    <br />
-    <div>
-      <button mat-mini-fab class="button" (click)="openDialogNewRequest()">
-        <fa-icon [icon]="faPlus"></fa-icon>
-      </button>
+  <br />
+  <div>
+    <button mat-mini-fab class="plus-button" (click)="openDialogNewRequest()">
+      <fa-icon [icon]="faPlus"></fa-icon>
+    </button>
 
-      <div fxFlex></div>
+    <div fxFlex></div>
 
-      <button
-        mat-raised-button
-        [routerLink]="['/all-certifications']"
-        class="all-cert-button"
-      >
-        See all certifications
-      </button>
-    </div>
-  </mat-card>
+    <button
+      mat-raised-button
+      [routerLink]="['/all-certifications']"
+      class="all-cert-button"
+    >
+      See all certifications
+    </button>
+  </div>
 </div>
+
+<mat-grid-list cols="2" rowHeight="420px">
+  <mat-grid-tile *ngFor="let request of arrCertifications | filter: term">
+    <mat-card class="request-cards">
+      <mat-grid-list cols="2">
+        <mat-grid-tile>
+          <mat-card-content>
+            <div class="certification-title">
+              <p>
+                {{ request.certificationTitle }}
+              </p>
+            </div>
+
+            <br />
+
+            <div class="certification-category">
+              <p>{{ request.categoryName }}</p>
+            </div>
+            <div class="align-status">
+              <div class="div-matcard-status">
+                <mat-card
+                  class="status"
+                  [ngClass]="{
+                    approved: request.status == 'Approved',
+                    rejected: request.status == 'Rejected',
+                    pending: request.status == 'Pending'
+                  }"
+                  >{{ request.status }}</mat-card
+                >
+              </div>
+            </div>
+          </mat-card-content>
+        </mat-grid-tile>
+
+        <mat-grid-tile>
+          <div class="vertical-line"></div>
+          <mat-card-content>
+            <p class="quarter-position">Quarter: Q{{ request.quarter }}</p>
+            <p class="cost-position">Cost: {{ request.price }}$</p>
+            <p class="business-justification-position">
+              Business Justification: {{ request.businessJustification }}
+            </p>
+          </mat-card-content>
+        </mat-grid-tile>
+
+        <div fxFlex></div>
+        <button
+          mat-icon-button
+          [matMenuTriggerFor]="aboveMenu"
+          class="edit-button"
+        >
+          <a>
+            <fa-icon
+              [icon]="faEdit"
+              style="font-size: 25px; color: white"
+            ></fa-icon>
+          </a>
+        </button>
+
+        <mat-menu
+          #aboveMenu="matMenu"
+          yPosition="above"
+          backdropClass="delete-button"
+        >
+          <div *ngIf="request.status === 'Pending'">
+            <button
+              mat-menu-item
+              color="accent"
+              (click)="openDialogEdit(request)"
+            >
+              Edit justification
+            </button>
+          </div>
+          <button
+            mat-menu-item
+            class="delete-button"
+            (click)="deleteDialog(request.requestId)"
+          >
+            Delete request
+          </button>
+        </mat-menu>
+      </mat-grid-list>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>
