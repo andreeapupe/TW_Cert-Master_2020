@@ -31,9 +31,11 @@ import { DashboardUserComponent } from './USER_RELATED/dashboard-user/dashboard-
 import { DashboardAdminComponent } from './ADMIN_RELATED/dashboard-admin/dashboard-admin.component'
 import { FilterModalComponent } from './ADMIN_RELATED/filter-modal/filter-modal.component'
 import { AllCertificationsComponent } from './all-certifications/all-certifications.component'
-import { AddRequestComponent } from './USER_RELATED/add-request/add-request.component';
-import { ChangeStatusModalComponent } from './ADMIN_RELATED/change-status-modal/change-status-modal.component';
+import { AddRequestComponent } from './USER_RELATED/add-request/add-request.component'
+import { ChangeStatusModalComponent } from './ADMIN_RELATED/change-status-modal/change-status-modal.component'
 import { DeleteModalComponent } from './USER_RELATED/delete-modal/delete-modal.component'
+import { HttpClientModule } from '@angular/common/http'
+import { ReactiveFormsModule } from '@angular/forms'
 
 @NgModule({
   declarations: [
@@ -71,6 +73,8 @@ import { DeleteModalComponent } from './USER_RELATED/delete-modal/delete-modal.c
     MatGridListModule,
     FontAwesomeModule,
     MatSnackBarModule,
+    HttpClientModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

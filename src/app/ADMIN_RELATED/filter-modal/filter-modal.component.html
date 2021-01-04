@@ -8,7 +8,7 @@
 <br />
 <mat-form-field appearance="outline">
   <mat-label>Filter by quarter</mat-label>
-  <mat-select>
+  <mat-select [(ngModel)]="quarterFilter">
     <mat-option>-- None --</mat-option>
     <mat-option value="1">Q1</mat-option>
     <mat-option value="2"> Q2</mat-option>
@@ -20,7 +20,7 @@
 <br />
 <mat-form-field appearance="outline">
   <mat-label>Filter by status</mat-label>
-  <mat-select>
+  <mat-select [(ngModel)]="statusFilter">
     <mat-option>-- None --</mat-option>
     <mat-option value="Approved">Approved</mat-option>
     <mat-option value="Rejected">Rejected</mat-option>
@@ -31,5 +31,7 @@
 <br />
 
 <div class="submit-button">
-  <button mat-raised-button class="submit">Confirm filters</button>
+  <button mat-raised-button class="submit" (click)="applyFilter()">
+    Confirm filters
+  </button>
 </div>

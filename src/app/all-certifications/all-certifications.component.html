@@ -25,92 +25,24 @@
   <mat-card class="all-certifications">
     <h2>Available certifications</h2>
   </mat-card>
-  <mat-grid-list cols="2" rowHeight="360px">
-    <mat-grid-tile>
+  <mat-grid-list cols="2" rowHeight="370px">
+    <mat-grid-tile *ngFor="let request of requests">
       <mat-card class="cards">
         <mat-card-header>
           <div mat-card-avatar class="header-image"></div>
-          <mat-card-title> Something </mat-card-title>
-          <mat-card-subtitle> Subtitle here </mat-card-subtitle>
+          <mat-card-title> {{ request.certificationTitle }} </mat-card-title>
+          <mat-card-subtitle>{{ request.categoryName }}</mat-card-subtitle>
         </mat-card-header>
         <mat-card-content>
           <div margin-top="20px">
             <p>
               Available quarters: <br />
-              Q3 i guess
+              Q{{ request.quarter }}
             </p>
             <hr color="#c4c4c4" />
             <p>
               Cost <br />
-              82934872$
-            </p>
-            <hr color="#c4c4c4" />
-
-            <p>
-              Description: <br />
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book. It has
-              survived not only five centuries, but also the leap into
-              electronic typesetting, remaining essentially unchanged.
-            </p>
-          </div>
-        </mat-card-content>
-      </mat-card>
-    </mat-grid-tile>
-
-    <mat-grid-tile>
-      <mat-card class="cards">
-        <mat-card-header>
-          <div mat-card-avatar class="header-image"></div>
-          <mat-card-title> Something </mat-card-title>
-          <mat-card-subtitle> Subtitle here </mat-card-subtitle>
-        </mat-card-header>
-        <mat-card-content>
-          <div margin-top="20px">
-            <p>
-              Available quarters: <br />
-              Q3 i guess
-            </p>
-            <hr color="#c4c4c4" />
-            <p>
-              Cost <br />
-              82934872$
-            </p>
-            <hr color="#c4c4c4" />
-
-            <p>
-              Description: <br />
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book. It has
-              survived not only five centuries, but also the leap into
-              electronic typesetting, remaining essentially unchanged.
-            </p>
-          </div>
-        </mat-card-content>
-      </mat-card>
-    </mat-grid-tile>
-
-    <mat-grid-tile>
-      <mat-card class="cards">
-        <mat-card-header>
-          <div mat-card-avatar class="header-image"></div>
-          <mat-card-title> Something </mat-card-title>
-          <mat-card-subtitle> Subtitle here </mat-card-subtitle>
-        </mat-card-header>
-        <mat-card-content>
-          <div margin-top="20px">
-            <p>
-              Available quarters: <br />
-              Q3 i guess
-            </p>
-            <hr color="#c4c4c4" />
-            <p>
-              Cost <br />
-              82934872$
+              {{ request.price }}$
             </p>
             <hr color="#c4c4c4" />
 

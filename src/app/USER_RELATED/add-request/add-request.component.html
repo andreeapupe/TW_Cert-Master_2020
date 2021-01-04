@@ -1,4 +1,6 @@
-<form>
+<!-- ############FORM SUBMIT MODE #################################### -->
+
+<form [formGroup]="requestForm" *ngIf="!edit">
   <div class="container">
     <h2>Request a certification</h2>
     <div class="fill"></div>
@@ -9,20 +11,31 @@
   <h4>Choose a certification</h4>
   <mat-form-field appearance="outline">
     <mat-label>Choose Certification</mat-label>
-    <mat-select>
+    <mat-select formControlName="title" (selectionChange)="showQuarter()">
       <mat-option>---None----</mat-option>
-      <mat-option> Certification title </mat-option>
+      <mat-option *ngFor="let request of requests" [value]="request">
+        {{ request.certificationTitle }}
+      </mat-option>
     </mat-select>
 
     <mat-hint>
-      <div>
-        <div>This field is required.</div>
+      <div
+        *ngIf="
+          requestForm.controls['title'].invalid &&
+          (requestForm.controls['title'].dirty ||
+            requestForm.controls['title'].touched)
+        "
+        class="form-error"
+      >
+        <div *ngIf="requestForm.controls['title'].errors.required">
+          This field is required.
+        </div>
       </div>
     </mat-hint>
   </mat-form-field>
 
   <br />
-  <div>This certification is in quarter Q2</div>
+  <div *ngIf="quarter">This certification is in quarter Q{{ quarter }}</div>
   <mat-divider></mat-divider>
   <h4>Business Justification</h4>
   <mat-form-field appearance="outline" class="business-justification">
@@ -30,27 +43,120 @@
     <textarea
       matInput
       placeholder="Ex. Employers looking to hire want you to have knowledge, experience and certifications in your areas of expertise."
+      formControlName="justification"
       minlength="15"
     ></textarea>
     <mat-hint>
-      <div>
-        <div>
+      <div
+        *ngIf="
+          requestForm.controls['justification'].invalid &&
+          (requestForm.controls['justification'].dirty ||
+            requestForm.controls['justification'].touched)
+        "
+        class="form-error"
+      >
+        <div *ngIf="requestForm.controls['justification'].errors.minlength">
           The business justification must be at least 15 characters long.
         </div>
-        <div>Business justification is required.</div>
+        <div *ngIf="requestForm.controls['justification'].errors.required">
+          Business justification is required.
+        </div>
       </div>
     </mat-hint>
   </mat-form-field>
 
-  <div>
+  <div
+    *ngIf="
+      (requestForm.controls['title'].invalid &&
+        requestForm.controls['justification'].invalid) ||
+      (requestForm.controls['justification'].valid &&
+        requestForm.controls['title'].invalid) ||
+      (requestForm.controls['justification'].invalid &&
+        requestForm.controls['title'].valid)
+    "
+  >
     <button mat-raised-button class="submit-button" disabled>
       Submit request
     </button>
   </div>
 
-  <div>
-    <button mat-raised-button mat-dialog-close class="submit-button">
+  <div
+    *ngIf="
+      requestForm.controls['title'].valid &&
+      requestForm.controls['justification'].valid
+    "
+  >
+    <button
+      mat-raised-button
+      mat-dialog-close
+      class="submit-button"
+      (click)="submitRequest()"
+    >
       Submit request
+    </button>
+  </div>
+</form>
+
+<!-- ############################ EDIT FORM #################################-->
+
+<form *ngIf="edit" [formGroup]="editForm">
+  <div class="container">
+    <h2>Edit certification</h2>
+    <div class="fill"></div>
+    <button mat-icon-button mat-dialog-close>x</button>
+  </div>
+  <mat-divider></mat-divider>
+  <br />
+  <h4>Certification Title</h4>
+  <mat-form-field appearance="outline">
+    <mat-label>{{ request.certificationTitle }}</mat-label>
+    <mat-select formControlName="title"> </mat-select>
+  </mat-form-field>
+
+  <br />
+
+  <mat-divider></mat-divider>
+  <h4>Business Justification</h4>
+  <mat-form-field appearance="outline" class="business-justification">
+    <mat-label>Business Justification</mat-label>
+    <textarea
+      matInput
+      formControlName="justification"
+      minlength="15"
+    ></textarea>
+    <mat-hint>
+      <div
+        *ngIf="
+          editForm.controls['justification'].invalid &&
+          (editForm.controls['justification'].dirty ||
+            editForm.controls['justification'].touched)
+        "
+        class="form-error"
+      >
+        <div *ngIf="editForm.controls['justification'].errors.minlength">
+          The business justification must be at least 15 characters long.
+        </div>
+        <div *ngIf="editForm.controls['justification'].errors.required">
+          Business justification is required.
+        </div>
+      </div>
+    </mat-hint>
+  </mat-form-field>
+
+  <div *ngIf="editForm.controls['justification'].invalid">
+    <button mat-raised-button class="submit-button" disabled>
+      Submit Changes
+    </button>
+  </div>
+
+  <div *ngIf="editForm.controls['justification'].valid">
+    <button
+      mat-raised-button
+      class="submit-button"
+      (click)="submitChanges()"
+      mat-dialog-close
+    >
+      Submit Changes
     </button>
   </div>
 </form>

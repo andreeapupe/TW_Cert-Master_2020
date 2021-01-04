@@ -1,8 +1,15 @@
 <h2>Are you sure you want change the status for this request?</h2>
 
 <div>
-  <button mat-raised-button color="warn" mat-dialog-close>Confirm</button>
+  <button
+    mat-raised-button
+    color="warn"
+    (click)="submitChanges()"
+    mat-dialog-close
+  >
+    Confirm
+  </button>
 
   <div fxFlex></div>
-  <button mat-raised-button color="accent" mat-dialog-close>Cancel</button>
+  <button mat-raised-button color="accent">Cancel</button>
 </div>

@@ -57,15 +57,25 @@
   </div>
 
   <mat-grid-list cols="4" rowHeight="670px">
-    <mat-grid-tile>
+    <mat-grid-tile *ngFor="let request of allCertifications">
       <mat-card class="cards">
         <div class="container">
           <a>
-            <mat-card-title> John Doe </mat-card-title>
-            <mat-card-subtitle> Request no. 34894893 </mat-card-subtitle>
+            <mat-card-title> {{ request.userName }}</mat-card-title>
+            <mat-card-subtitle>
+              Request no. {{ request.requestId }}
+            </mat-card-subtitle>
           </a>
           <div class="fill"></div>
-          <mat-card class="status">Pending</mat-card>
+          <mat-card
+            class="status"
+            [ngClass]="{
+              approved: request.status == 'Approved',
+              rejected: request.status == 'Rejected',
+              pending: request.status == 'Pending'
+            }"
+            >{{ request.status }}</mat-card
+          >
         </div>
 
         <mat-card-content class="spacing">
@@ -73,105 +83,68 @@
             <sub><mat-icon class="icon">assignment</mat-icon></sub
             >Certification Title
           </p>
-          <a>Certification Title right here</a>
+          <a>{{ request.certificationTitle }}</a>
           <hr />
           <p>
             <sub><mat-icon class="icon">style</mat-icon></sub
             >Category
           </p>
-          <p>Category name here</p>
+          <p>{{ request.categoryName }}</p>
           <hr />
           <p>
             <sub><mat-icon class="icon">query_builder</mat-icon></sub
             >Quarter
           </p>
-          <p>Q2</p>
+          <p>Q{{ request.quarter }}</p>
           <hr />
 
           <p>
             <sub><mat-icon class="icon"> insert_comment</mat-icon></sub
             >Business Justification
           </p>
-          <p>Lorem ipsum sajhfbjdskas</p>
+          <p>{{ request.businessJustification }}</p>
         </mat-card-content>
 
         <div class="footer-buttons">
           <mat-card-content>
             <mat-grid-list cols="3">
-              <a>
+              <a *ngIf="request.status === 'Pending'">
                 <button
                   mat-raised-button
+                  matTooltip="Approve this request"
                   class="approve-button"
-                  (click)="openDialogAcceptReject()"
+                  (click)="
+                    openDialogAcceptReject(request.requestId, 'Approved')
+                  "
                 >
                   Approve
                 </button>
 
                 <button
                   mat-raised-button
+                  matTooltip="Reject this request"
                   class="reject-button"
-                  (click)="openDialogAcceptReject()"
+                  (click)="
+                    openDialogAcceptReject(request.requestId, 'Rejected')
+                  "
                 >
                   Reject
                 </button>
               </a>
-            </mat-grid-list>
-          </mat-card-content>
-        </div>
-      </mat-card>
-    </mat-grid-tile>
 
-    <!-------- SECOND REQUEST -------->
-    <mat-grid-tile>
-      <mat-card class="cards">
-        <div class="container">
-          <a>
-            <mat-card-title> John Doe </mat-card-title>
-            <mat-card-subtitle> Request no. 34894893 </mat-card-subtitle>
-          </a>
-          <div class="fill"></div>
-          <mat-card class="status-acc">Accepted</mat-card>
-        </div>
+              <button
+                *ngIf="
+                  request.status === 'Approved' || request.status === 'Rejected'
+                "
+                mat-raised-button
+                matTooltip="Delete this request"
+                (click)="deleteDialog(request.requestId)"
+                class="delete-button"
+              >
+                Delete request<mat-icon>delete</mat-icon>
+              </button>
 
-        <mat-card-content class="spacing">
-          <p>
-            <sub><mat-icon class="icon">assignment</mat-icon></sub
-            >Certification Title
-          </p>
-          <a>Certification Title right here</a>
-          <hr />
-          <p>
-            <sub><mat-icon class="icon">style</mat-icon></sub
-            >Category
-          </p>
-          <p>Category name here</p>
-          <hr />
-          <p>
-            <sub><mat-icon class="icon">query_builder</mat-icon></sub
-            >Quarter
-          </p>
-          <p>Q2</p>
-          <hr />
-
-          <p>
-            <sub><mat-icon class="icon"> insert_comment</mat-icon></sub
-            >Business Justification
-          </p>
-          <p>Lorem ipsum sajhfbjdskas</p>
-        </mat-card-content>
-
-        <div class="footer-buttons">
-          <mat-card-content>
-            <mat-grid-list cols="3">
-              <a>
-                <button
-                  mat-raised-button
-                  class="delete-button"
-                  (click)="deleteDialog()"
-                >
-                  Delete request<mat-icon>delete</mat-icon>
-                </button>
-              </a>
+              <!------------_#48394723847239842738742394872y3uhrnfdfkiujduij-->
             </mat-grid-list>
           </mat-card-content>
         </div>
