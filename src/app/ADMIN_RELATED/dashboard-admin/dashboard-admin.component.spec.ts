@@ -1,25 +1,34 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing'
 
-import { DashboardAdminComponent } from './dashboard-admin.component';
+import { DashboardAdminComponent } from './dashboard-admin.component'
+import { HttpClientModule } from '@angular/common/http'
+import { MatDialog } from '@angular/material/dialog'
+import { MatSnackBar } from '@angular/material/snack-bar'
+import { MatMenuModule } from '@angular/material/menu'
+import { Ng2SearchPipeModule } from 'ng2-search-filter'
 
 describe('DashboardAdminComponent', () => {
-  let component: DashboardAdminComponent;
-  let fixture: ComponentFixture<DashboardAdminComponent>;
+  let component: DashboardAdminComponent
+  let fixture: ComponentFixture<DashboardAdminComponent>
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DashboardAdminComponent ]
-    })
-    .compileComponents();
-  }));
+      declarations: [DashboardAdminComponent],
+      imports: [HttpClientModule, MatMenuModule, Ng2SearchPipeModule],
+      providers: [
+        { provide: MatDialog, useValue: {} },
+        { provide: MatSnackBar, useValue: {} },
+      ],
+    }).compileComponents()
+  }))
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DashboardAdminComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+    fixture = TestBed.createComponent(DashboardAdminComponent)
+    component = fixture.componentInstance
+    fixture.detectChanges()
+  })
 
   it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-});
+    expect(component).toBeTruthy()
+  })
+})

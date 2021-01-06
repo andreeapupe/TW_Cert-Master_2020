@@ -172,10 +172,12 @@
 
 .approved {
   background-color: #44786a;
+  color: white;
 }
 
 .rejected {
   background-color: #ab3d36;
+  color: white;
 }
 
 .pending {
